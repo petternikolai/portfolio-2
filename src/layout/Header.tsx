@@ -5,14 +5,7 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
-
-const navigation = [
-  { name: "Home", href: "#home" },
-  { name: "About Me", href: "#about" },
-  { name: "View My Work", href: "#my-work" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
-];
+import navigation from "../constants/navigation";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -37,6 +30,14 @@ export default function Header() {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    // Update the document title with the active section
+    const activeNav = navigation.find(
+      (nav) => nav.href.slice(1) === activeSection,
+    );
+    if (activeNav) document.title = activeNav.title;
+  }, [activeSection]);
 
   return (
     <Disclosure as="nav" className="sticky top-0 z-50 bg-black">

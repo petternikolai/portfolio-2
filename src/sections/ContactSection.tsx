@@ -7,15 +7,20 @@ export default function ContactSection() {
     <Section id="contact" className="justify-between">
       <div className="mt-10 flex flex-col items-center">
         <h2 className="text-4xl font-bold text-white">Contact</h2>
-        <p className="mb-6 max-w-2xl text-lg text-zinc-400">
+        <p className="mb-6 mt-5 max-w-2xl text-lg text-zinc-400">
           I'd love to hear from you! Whether it's a project inquiry,
           collaboration idea, or just to say hi, feel free to reach out.
         </p>
         <a
           href="mailto:pnkristoffersen@gmail.com"
-          className="mb-6 text-5xl font-semibold text-zinc-400 underline hover:text-accent"
+          className="mb-6 text-2xl font-semibold text-zinc-400 underline hover:text-accent"
         >
-          <FaEnvelope />
+          <div className="flex items-center gap-5">
+            <FaEnvelope />
+            <span>
+              <p className="text-sm">pnkristoffersen@gmail.com</p>
+            </span>
+          </div>
         </a>
         <SoMeLinks className="mt-5" />
       </div>

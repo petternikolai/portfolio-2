@@ -9,7 +9,7 @@ export default function MyWorkSection() {
     <Section id="my-work" className="">
       <div className="mt-10 flex flex-col items-center">
         <h2 className="text-4xl font-bold text-white">My Work</h2>
-        <p className="text-lg text-zinc-400 sm:w-2/3">
+        <p className="mt-5 text-lg text-zinc-400 sm:w-2/3">
           Here are some of the projects I've worked on recently. Click on the
           icons to view the live preview or the GitHub repository.
         </p>
