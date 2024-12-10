@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Code", monospace;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: "Fira Code", monospace;
+  line-height: 1.6;
+}
+
+code {
+  font-family: "Fira Code", monospace;
+  background-color: #f5f5f5;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+:root {
+  --header-height: 63.99px;
+  --footer-height: 63.99px;
+}
+
+.custom-height {
+  min-height: calc(100vh - var(--header-height));
+}
+
+.fancy-underline {
+  position: relative;
+  overflow: hidden;
+}
+
+.fancy-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%; /* Ensures the underline spans the full width */
+  background: linear-gradient(90deg, #718c0d, #a3d16d);
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: left; /* Starts scaling from the left */
+  transition: transform 0.3s ease; /* Smooth animation */
+}
+
+.fancy-underline:hover::after,
+.fancy-underline.active-underline::after {
+  transform: scaleX(1); /* Fully visible */
+}
